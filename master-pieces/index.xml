@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>&amp;copy;2018 ckcks12</copyright>
-    <lastBuildDate>Fri, 06 Jul 2018 22:49:43 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 07 Jul 2018 08:52:17 +0900</lastBuildDate>
     
 	<atom:link href="https://ckcks12.github.io/master-pieces/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Deep Lol</title>
+      <link>https://ckcks12.github.io/master-pieces/deep-lol/</link>
+      <pubDate>Sat, 07 Jul 2018 08:52:17 +0900</pubDate>
+      
+      <guid>https://ckcks12.github.io/master-pieces/deep-lol/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Debian Package Manager</title>

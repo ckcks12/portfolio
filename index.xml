@@ -2,157 +2,177 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ckcks12</title>
-    <link>https://ckcks12.github.io/</link>
+    <link>https://ckcks12.com/</link>
     <description>Recent content on ckcks12</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>&amp;copy;2018 ckcks12</copyright>
-    <lastBuildDate>Fri, 06 Jul 2018 22:49:43 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 07 Jul 2018 08:52:17 +0900</lastBuildDate>
     
-	<atom:link href="https://ckcks12.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ckcks12.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Deep Lol</title>
+      <link>https://ckcks12.com/projects/deep-lol/</link>
+      <pubDate>Sat, 07 Jul 2018 08:52:17 +0900</pubDate>
+      
+      <guid>https://ckcks12.com/projects/deep-lol/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deep Lol Review</title>
+      <link>https://ckcks12.com/dev-reviews/deep-lol-review/</link>
+      <pubDate>Sat, 07 Jul 2018 07:52:23 +0900</pubDate>
+      
+      <guid>https://ckcks12.com/dev-reviews/deep-lol-review/</guid>
+      <description> 국내 최고의 인기 게임 League Of Legends 에 인류 최고의 기술 Deep Learning을 접목시켜 보았습니다.
+프로젝트 이름은 Deep LoL
+목차  동기 계획 시행착오 동작 결론  </description>
+    </item>
+    
+    <item>
       <title>Debian Package Manager</title>
-      <link>https://ckcks12.github.io/master-pieces/debian-package-manager/</link>
+      <link>https://ckcks12.com/projects/debian-package-manager/</link>
       <pubDate>Fri, 06 Jul 2018 22:49:43 +0900</pubDate>
       
-      <guid>https://ckcks12.github.io/master-pieces/debian-package-manager/</guid>
+      <guid>https://ckcks12.com/projects/debian-package-manager/</guid>
       <description></description>
     </item>
     
     <item>
       <title>X Twitter</title>
-      <link>https://ckcks12.github.io/master-pieces/x-twitter/</link>
+      <link>https://ckcks12.com/projects/x-twitter/</link>
       <pubDate>Fri, 06 Jul 2018 22:49:38 +0900</pubDate>
       
-      <guid>https://ckcks12.github.io/master-pieces/x-twitter/</guid>
+      <guid>https://ckcks12.com/projects/x-twitter/</guid>
       <description></description>
     </item>
     
     <item>
       <title>W Tube</title>
-      <link>https://ckcks12.github.io/master-pieces/w-tube/</link>
+      <link>https://ckcks12.com/projects/w-tube/</link>
       <pubDate>Fri, 06 Jul 2018 22:49:33 +0900</pubDate>
       
-      <guid>https://ckcks12.github.io/master-pieces/w-tube/</guid>
+      <guid>https://ckcks12.com/projects/w-tube/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lantern</title>
-      <link>https://ckcks12.github.io/master-pieces/lantern/</link>
+      <link>https://ckcks12.com/projects/lantern/</link>
       <pubDate>Fri, 06 Jul 2018 22:49:28 +0900</pubDate>
       
-      <guid>https://ckcks12.github.io/master-pieces/lantern/</guid>
+      <guid>https://ckcks12.com/projects/lantern/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cookie</title>
-      <link>https://ckcks12.github.io/master-pieces/cookie/</link>
+      <link>https://ckcks12.com/projects/cookie/</link>
       <pubDate>Fri, 06 Jul 2018 22:49:23 +0900</pubDate>
       
-      <guid>https://ckcks12.github.io/master-pieces/cookie/</guid>
+      <guid>https://ckcks12.com/projects/cookie/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sayahae</title>
-      <link>https://ckcks12.github.io/master-pieces/sayahae/</link>
+      <link>https://ckcks12.com/projects/sayahae/</link>
       <pubDate>Fri, 06 Jul 2018 22:49:18 +0900</pubDate>
       
-      <guid>https://ckcks12.github.io/master-pieces/sayahae/</guid>
+      <guid>https://ckcks12.com/projects/sayahae/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ubot</title>
-      <link>https://ckcks12.github.io/master-pieces/ubot/</link>
+      <link>https://ckcks12.com/projects/ubot/</link>
       <pubDate>Fri, 06 Jul 2018 22:49:12 +0900</pubDate>
       
-      <guid>https://ckcks12.github.io/master-pieces/ubot/</guid>
+      <guid>https://ckcks12.com/projects/ubot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Safe Desk</title>
-      <link>https://ckcks12.github.io/master-pieces/safe-desk/</link>
+      <link>https://ckcks12.com/projects/safe-desk/</link>
       <pubDate>Fri, 06 Jul 2018 22:49:06 +0900</pubDate>
       
-      <guid>https://ckcks12.github.io/master-pieces/safe-desk/</guid>
+      <guid>https://ckcks12.com/projects/safe-desk/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Skimmer</title>
-      <link>https://ckcks12.github.io/master-pieces/skimmer/</link>
+      <link>https://ckcks12.com/projects/skimmer/</link>
       <pubDate>Fri, 06 Jul 2018 22:49:01 +0900</pubDate>
       
-      <guid>https://ckcks12.github.io/master-pieces/skimmer/</guid>
+      <guid>https://ckcks12.com/projects/skimmer/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nolo</title>
-      <link>https://ckcks12.github.io/master-pieces/nolo/</link>
+      <link>https://ckcks12.com/projects/nolo/</link>
       <pubDate>Fri, 06 Jul 2018 22:48:53 +0900</pubDate>
       
-      <guid>https://ckcks12.github.io/master-pieces/nolo/</guid>
+      <guid>https://ckcks12.com/projects/nolo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ground Monitoring</title>
-      <link>https://ckcks12.github.io/master-pieces/ground-monitoring/</link>
+      <link>https://ckcks12.com/projects/ground-monitoring/</link>
       <pubDate>Fri, 06 Jul 2018 22:48:48 +0900</pubDate>
       
-      <guid>https://ckcks12.github.io/master-pieces/ground-monitoring/</guid>
+      <guid>https://ckcks12.com/projects/ground-monitoring/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Dp Meter</title>
-      <link>https://ckcks12.github.io/master-pieces/dp-meter/</link>
+      <link>https://ckcks12.com/projects/dp-meter/</link>
       <pubDate>Fri, 06 Jul 2018 22:48:41 +0900</pubDate>
       
-      <guid>https://ckcks12.github.io/master-pieces/dp-meter/</guid>
+      <guid>https://ckcks12.com/projects/dp-meter/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Easy Programming</title>
-      <link>https://ckcks12.github.io/master-pieces/easy-programming/</link>
+      <link>https://ckcks12.com/projects/easy-programming/</link>
       <pubDate>Fri, 06 Jul 2018 22:47:52 +0900</pubDate>
       
-      <guid>https://ckcks12.github.io/master-pieces/easy-programming/</guid>
+      <guid>https://ckcks12.com/projects/easy-programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Noti Q</title>
-      <link>https://ckcks12.github.io/master-pieces/noti-q/</link>
+      <link>https://ckcks12.com/projects/noti-q/</link>
       <pubDate>Fri, 06 Jul 2018 22:46:55 +0900</pubDate>
       
-      <guid>https://ckcks12.github.io/master-pieces/noti-q/</guid>
+      <guid>https://ckcks12.com/projects/noti-q/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Project7302</title>
-      <link>https://ckcks12.github.io/master-pieces/project7302/</link>
+      <link>https://ckcks12.com/projects/project7302/</link>
       <pubDate>Fri, 06 Jul 2018 22:43:44 +0900</pubDate>
       
-      <guid>https://ckcks12.github.io/master-pieces/project7302/</guid>
+      <guid>https://ckcks12.com/projects/project7302/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Play With Your Algorithm</title>
-      <link>https://ckcks12.github.io/master-pieces/play-with-your-algorithm/</link>
+      <link>https://ckcks12.com/projects/play-with-your-algorithm/</link>
       <pubDate>Fri, 06 Jul 2018 22:06:49 +0900</pubDate>
       
-      <guid>https://ckcks12.github.io/master-pieces/play-with-your-algorithm/</guid>
+      <guid>https://ckcks12.com/projects/play-with-your-algorithm/</guid>
       <description></description>
     </item>
     

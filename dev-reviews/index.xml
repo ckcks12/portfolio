@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dev-reviews on ckcks12</title>
+    <link>https://ckcks12.com/dev-reviews/</link>
+    <description>Recent content in Dev-reviews on ckcks12</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <copyright>&amp;copy;2018 ckcks12</copyright>
+    <lastBuildDate>Sat, 07 Jul 2018 07:52:23 +0900</lastBuildDate>
+    
+	<atom:link href="https://ckcks12.com/dev-reviews/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Deep Lol Review</title>
+      <link>https://ckcks12.com/dev-reviews/deep-lol-review/</link>
+      <pubDate>Sat, 07 Jul 2018 07:52:23 +0900</pubDate>
+      
+      <guid>https://ckcks12.com/dev-reviews/deep-lol-review/</guid>
+      <description> 국내 최고의 인기 게임 League Of Legends 에 인류 최고의 기술 Deep Learning을 접목시켜 보았습니다.
+프로젝트 이름은 Deep LoL
+목차  동기 계획 시행착오 동작 결론  </description>
+    </item>
+    
+  </channel>
+</rss>
