@@ -4,3 +4,7 @@ div.col-lg-8.content-wrapper {
     margin: auto;
     float: none;
 }
+
+.content-column-content p {
+    color: #333333;
+}
