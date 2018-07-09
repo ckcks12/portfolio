@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="ko-kr">
 <head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Deep LoL Review</title>
-
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<title>Deep LoL Review</title> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
@@ -14,29 +13,26 @@
 <link rel="stylesheet" href="https://ckcks12.com/css/owl.theme.css">
 
 
-  <link href="https://ckcks12.com/css/style.default.css" rel="stylesheet" id="theme-stylesheet">
+<link href="https://ckcks12.com/css/style.default.css" rel="stylesheet" id="theme-stylesheet"> 
 
- 
 
-  
-    <!--[if lt IE 9]>
+
+<!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  
+
 
 
 <link href="https://ckcks12.com/css/custom.css" rel="stylesheet">
-<link rel="shortcut icon" href="https://ckcks12.com/img/favicon.png">
-
-
+<link href="https://ckcks12.com/css/imagesviewer.css" rel="stylesheet">
+<link rel="shortcut icon" href="https://ckcks12.com/img/favicon.png">  
 <script>
 window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-74316508-2', 'auto');
 ga('send', 'pageview');
 </script>
 <script async src='//www.google-analytics.com/analytics.js'></script>
-
 </head>
 <body>
   <div id="all">
@@ -100,10 +96,12 @@ ga('send', 'pageview');
         
           &copy;2018 ckcks12
         
-        | Template by <a href="https://bootstrapious.com/free-templates" class="external">Bootstrapious.com</a>
-
-&amp; ported to Hugo by <a href="https://github.com/kishaningithub">Kishan B</a>
-
+        | Template by
+<a href="https://bootstrapious.com/free-templates" class="external">Bootstrapious.com</a>
+&amp; ported to Hugo by
+<a href="https://github.com/kishaningithub">Kishan B</a>
+| Edited by
+<a href="//ckcks12.com">ckcks12</a>
       </p>
     </div>
   </div>
@@ -117,7 +115,7 @@ ga('send', 'pageview');
 </div>
 
     <div class="row">
-        <div class="col-lg-8 content-wrapper">
+        <div class="col-lg-10 content-wrapper">
             <div class="content-column-content">
                 <h1>Deep LoL Review</h1>
                 
@@ -158,7 +156,7 @@ ga('send', 'pageview');
 
 <hr />
 
-<p><img src="http://preview.yes24.com/PreviewResize.aspx?no=17967245&fn=n8apwkbkdvyfhy5y01.jpg&size=700|952" width=300></p>
+<p><img src="http://preview.yes24.com/PreviewResize.aspx?no=17967245&amp;fn=n8apwkbkdvyfhy5y01.jpg&amp;size=700|952" alt="" /></p>
 
 <p>6 개월 계획을 세우고 기초부터 공부했습니다. 부족한 수학을 위해 <code>Linear Algebra</code> 가 많은 도움 되었습니다.
 <code>Deep Learning</code> 을 위해 아래의 <em>매우 유익하고 소중한</em> 강의들을 들었습니다. <em>모두 무료입니다.</em>
@@ -172,16 +170,34 @@ ga('send', 'pageview');
 <li><a href="https://www.youtube.com/watch?v=OQQ-W_63UgQ&amp;list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6">CS224N by Christopher Manning</a></li>
 </ul>
 
-<p><img src="https://tensorflowkorea.files.wordpress.com/2017/08/cs231n_2017.png?w=625" width=400></p>
+<p><img src="https://tensorflowkorea.files.wordpress.com/2017/08/cs231n_2017.png?w=625" alt="" /></p>
 
 <blockquote>
 <p>CS231n 의 <code>Fei-Fei Li</code> 교수님이신데 준수하신 외모에 깜짝 놀랬었습니다.</p>
 </blockquote>
 
+<h4 id="data-수집-crawler">Data 수집, Crawler</h4>
+
 <p><img src="https://i.imgur.com/jEmRRIE.png" alt="" /></p>
 
-<p>Train 을 위해 Data set 을 모아야 했습니다. <a href="https://developer.riotgames.com/"><code>Riot Games API</code></a> 를 활용하여 Cralwer 를 만들었습니다.
-Graph 를 보며 필요한 만큼 각 Queue 의 Consumer Thread 를 조정합니다. 언젠가 이 Crawler 만 따로 프로젝트로 빼내야겠습니다.</p>
+<p>train 을 위해 data set 을 모아야 했습니다. <a href="https://developer.riotgames.com/"><code>Riot Games API</code></a> 를 활용하여 cralwer 를 만들었습니다.
+graph 를 보며 필요한 만큼 각 queue 의 consumer thread 를 조정합니다. <em>언젠가 이 crawler 만 따로 프로젝트로 빼내야겠습니다.</em></p>
+
+<h4 id="mongodb-보다-mysql">MongoDB 보다 MySQL</h4>
+
+<p><img src="/img/deep-lol/db-comparison-write.png" alt="" />
+<img src="/img/deep-lol/db-comparison-read.png" alt="" />
+<img src="/img/deep-lol/db-comparison-update.png" alt="" /></p>
+
+<p>처음엔 database 로 <code>MongoDB</code> 를 썼습니다.
+하지만 준수한 write 속도에 비해 <code>현저히 느린 read 속도</code> 이슈가 치명적이었습니다.</p>
+
+<!-- 데이터 수집
+가공
+데이터저장 이슈 mongo vs mysql
+딥러닝학습, 케라스 vs 텐서플로
+케라스 js
+vue js vs react , spa 이슈 -->
 
 <hr />
 
@@ -230,7 +246,7 @@ Graph 를 보며 필요한 만큼 각 Queue 의 Consumer Thread 를 조정합니
 <script src="https://ckcks12.com/js/masonry.pkgd.min.js"></script>
 <script src="https://ckcks12.com/js/imagesloaded.pkgd.min.js"></script>
 <script src="https://ckcks12.com/js/owl.carousel.min.js"></script>
+<script src="https://ckcks12.com/js/imagesviewer.min.js"></script>
 <script src="https://ckcks12.com/js/front.js"></script>
-
 </body>
 </html>

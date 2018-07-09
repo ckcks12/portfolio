@@ -1,8 +1,18 @@
 /* your styles go here */
 
-div.col-lg-8.content-wrapper {
+div.content-wrapper {
     margin: auto;
     float: none;
+}
+
+div.content-wrapper img {
+    cursor: pointer;
+}
+
+@media (min-width: 1200px) {
+    div.content-wrapper img {
+        width: 66.6666666%;
+    }
 }
 
 .content-column-content p {

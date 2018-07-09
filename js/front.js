@@ -163,3 +163,22 @@ $(window).resize(function () {
         windowWidth = newWindowWidth;
     }
 });
+
+/**
+ * imagesviewer
+ */
+$(function() {
+    window.viewer = ImageViewer()
+    $('img').click(function() {
+        var src = this.src
+        window.viewer.show(src)
+    })
+    $(document).keyup(function(e) {
+        if (e.keyCode == 27) {
+            window.viewer.hide()
+        }
+    })
+    $('#iv-container').click(function() {
+        window.viewer.hide()
+    })
+})
