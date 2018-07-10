@@ -115,7 +115,7 @@ ga('send', 'pageview');
 </div>
 
     <div class="row">
-        <div class="col-lg-10 content-wrapper">
+        <div class="col-lg-8 content-wrapper">
             <div class="content-column-content">
                 <h1>Deep LoL Review</h1>
                 
@@ -124,37 +124,12 @@ ga('send', 'pageview');
 
 <p>프로젝트 이름은 <a href="/projects/deep-lol">Deep LoL</a></p>
 
-<hr />
-
-<h3 id="목차">목차</h3>
-
-<hr />
-
-<ul>
-<li><a href="#동기">동기</a></li>
-<li><a href="#과정">과정</a></li>
-<li><a href="#동작">동작</a></li>
-<li><a href="#결론">결론</a></li>
-</ul>
-
-<hr />
-
-<h3 id="동기">동기</h3>
-
-<hr />
-
 <p><img src="https://cdn.vox-cdn.com/thumbor/NeRUO1APMacQrypctOIdkyAtc4o=/0x0:1200x800/1200x800/filters:focal(0x0:1200x800)/cdn.vox-cdn.com/uploads/chorus_image/image/49082519/___.0.0.jpg" alt="" /></p>
 
 <p>군대서 공부할 겸, 실력 관리 위해 시작했습니다.</p>
 
 <p>AlphaGo 알파고 때부터 눈독 들여온 인공지능 AI <code>Deep Learning</code> 딥러닝 기술과
 제 또래서 가장 인기 게임이라 피드백, 홍보에 적합할듯 하여 <code>League of Legends</code> 롤을 선택했습니다.</p>
-
-<hr />
-
-<h3 id="과정">과정</h3>
-
-<hr />
 
 <p><img src="http://preview.yes24.com/PreviewResize.aspx?no=17967245&amp;fn=n8apwkbkdvyfhy5y01.jpg&amp;size=700|952" alt="" /></p>
 
@@ -183,33 +158,155 @@ ga('send', 'pageview');
 <p>train 을 위해 data set 을 모아야 했습니다. <a href="https://developer.riotgames.com/"><code>Riot Games API</code></a> 를 활용하여 cralwer 를 만들었습니다.
 graph 를 보며 필요한 만큼 각 queue 의 consumer thread 를 조정합니다. <em>언젠가 이 crawler 만 따로 프로젝트로 빼내야겠습니다.</em></p>
 
-<h4 id="mongodb-보다-mysql">MongoDB 보다 MySQL</h4>
+<h4 id="최악의-mongodb">최악의 MongoDB</h4>
 
 <p><img src="/img/deep-lol/db-comparison-write.png" alt="" />
 <img src="/img/deep-lol/db-comparison-read.png" alt="" />
-<img src="/img/deep-lol/db-comparison-update.png" alt="" /></p>
+<img src="/img/deep-lol/db-comparison-update.png" alt="" />
+<img src="https://i.imgur.com/O9rNlnZ.png" alt="" /></p>
 
 <p>처음엔 database 로 <code>MongoDB</code> 를 썼습니다.
-하지만 준수한 write 속도에 비해 <code>현저히 느린 read 속도</code> 이슈가 치명적이었습니다.</p>
+하지만 준수한 write 속도에 비해 <code>현저히 느린 read 속도</code> 이슈가 치명적이었습니다.
+data attribute 가 워낙에 또 많아서 그렇기도 했지만 한 fetch 에 1000ms 가 걸리기도 했습니다.</p>
 
-<!-- 데이터 수집
-가공
-데이터저장 이슈 mongo vs mysql
-딥러닝학습, 케라스 vs 텐서플로
-케라스 js
-vue js vs react , spa 이슈 -->
+<p><img src="https://i.imgur.com/UA5z1jD.png" alt="" /></p>
 
-<hr />
+<p>뿐만 아니라 <code>python</code> 과의 조합은 최악이었습니다.
+<code>mongodb driver</code>를 통해 fetch 된 data 들은 mongo driver 자체를 위해 <code>wrapping</code>된 <code>무엇</code>인가가 있어서
+실제 데이터보다 최대 <code>10배</code> 가량 무거웠습니다.
+그래서 <code>25만개</code> 데이터가 무려 <code>11GB</code>를 차지했습니다.
+<em>read 도 느린데 심지어 무겁기까지? 이거 정말 최악</em></p>
 
-<h3 id="동작">동작</h3>
+<h4 id="rdbms-mysql-아직-죽지않았다">RDBMS - MySQL &ldquo;아직 죽지않았다&rdquo;</h4>
 
-<hr />
+<p><img src="https://i.imgur.com/yTeI9fk.png" alt="" /></p>
 
-<hr />
+<p><code>workbench</code>는 꿈에 그리던 DB GUI Management 를 제공해줍니다.
+꽤 쓰기 편했으며 무엇보다 <code>monitoring</code>이 환상적이었습니다.
+write 가 상상을 초월할 정도로 빨랐습니다. 거의 <code>초당 10만개, 그 이상?</code>
+이유는 <code>primary key</code>를 <code>auto_increment</code>로 했기 때문입니다.
+insert 하는데에 있어서 순차적으로 file node 를 접근해서 write 하기 때문에 내부적으로 굉장한 최적화를 시켰으리라 짐작됩니다.
+<code>primary key</code>를 다른 값으로 해보면 중복 검사하랴, <code>indexing</code> 하랴 꽤 느려집니다.</p>
 
-<h3 id="결론">결론</h3>
+<h4 id="딥러닝-학습-keras">딥러닝 학습, Keras</h4>
 
-<hr />
+<p><img src="https://s3.amazonaws.com/keras.io/img/keras-logo-2018-large-1200.png" alt="" /></p>
+
+<p>Tensorflow 를 공부하다가 조금 더 사용하기 쉬워보이는 <code>Keras</code>를 선택하게 되었습니다.
+실제로 굉장히 쉽우며 내부적으로는 Tensorflow 를 사용하므로 적극 추천드립니다.</p>
+
+<h4 id="주제-결정">주제 결정</h4>
+
+<p>우선 승률에 영향을 끼치는 챔피언의 조합, 팀 조합을 추천해주려고 했습니다.
+이후에는 게임 플레이 중 구매해야할 아이템이나 푸쉬해야할 라인을 추천해주려고 했습니다.</p>
+
+<h4 id="학습-데이터-결정">학습 데이터 결정</h4>
+
+<p>학습시키기에 앞서 어떻게 데이터를 input 으로 줄지 결정했었습니다.
+크게 떠오른 것은 3 가지 입니다.</p>
+
+<ul>
+<li>onehot encoding</li>
+<li>embedding</li>
+<li>raw number</li>
+</ul>
+
+<p>raw number 의 경우에는 현재 매우 부적절하다는 것을 알 수 있습니다.
+<code>챔피언의 번호</code>가 raw number 로 들어가게 되면 41 번 챔피언과 42 번 챔피언이 신경망 내에서 큰 차이를 주지 못하게 됩니다.
+따라서 onehot encoding 과 embedding 으로 각각 실험하여 비교했습니다.</p>
+
+<h4 id="결과는-onehot-의-승리">결과는 onehot 의 승리</h4>
+
+<p>18 번 챔피언을 나타낼때 onehot encoding 과 embedding 은 다음과 같습니다.</p>
+
+<ul>
+<li>onehot encoding</li>
+<li>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 &hellip;</li>
+<li>embedding</li>
+<li>1.2 0.34 231 32 1.23 5.3 2.5 67.4 5342.45 34.2 3.231 35.12314 &hellip;</li>
+</ul>
+
+<p>사진을 미쳐 준비하지 못했는데, 거짓말 하는건 아니고 embedding 은 굉장히 점수가 낮았습니다.
+이유는 neural 들만 알겠지만.. 추측하기론 embedding 으로 임의의 vector 로 챔피언들을 나타낼때
+<code>output</code>에 의거하여 각 챔피언의 vector 를 이렇게 저렇게 다른 각도로 neural 들이 공부하는데
+생각보다 그 vector 값들이 도움이 안되는 것 같습니다. <em>=현실과 너무 동떨어진 vector 값이고 사실상 onehot encoding 같은 binary 의 의미가 너무 강하기 때문</em></p>
+
+<p>vector 들이 나타내는 값을 사용하기보단 차라리 챔피언의 체력이나 공격력 등을 feature 로 넣어보는게 어떨까 생각했습니다.
+하지만 <a href="#League of Legends 는 잘 만든 게임.">결과</a>를 분석해보니 애초에 챔피언은 승리에 큰 영향을 미치지 않았습니다.</p>
+
+<h4 id="onehot-으로-여러가지-시도">onehot 으로 여러가지 시도</h4>
+
+<p>머신러닝, 딥러닝의 가장 큰 노가다는 feature 를 결정하는 것 같습니다.</p>
+
+<ul>
+<li>한 array 에 4 개의 챔피언 onehot encoding
+
+<ul>
+<li>0 0 1 0 0 0 1 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 &hellip;</li>
+</ul></li>
+<li>4 개의 array 각각에 1 개의 챔피언 onehot encoding
+
+<ul>
+<li>0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 &hellip;</li>
+<li>0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 &hellip;</li>
+<li>0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 &hellip;</li>
+<li>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 &hellip;</li>
+</ul></li>
+</ul>
+
+<p>수치적으로서는(evaluation score) 전자가 더 나았습니다.
+아무래도 overfitting 하기도 쉽고 관여되는 feature input 자체가 낮기 때문이라고 생각합니다.
+그러나 실제 플레이어로서 느끼기엔 후자가 더 좋았습니다.
+이유는 각 lane 단위로 추천해주기 때문이었던 것 같습니다.</p>
+
+<h4 id="cnn-빼놓으면-섭섭하지">CNN 빼놓으면 섭섭하지</h4>
+
+<p>제 시발점이자 동기였던 AlphaGo 는 CNN 으로 다음 수를 어디에 놓을지 확률적으로 계산해 낸다고 하죠.
+그래서 저도 CNN 을 <em>우겨넣어보았습니다.</em></p>
+
+<ul>
+<li>Conv1D</li>
+<li>Conv2D</li>
+</ul>
+
+<h4 id="league-of-legends-는-잘-만든-게임">League of Legends 는 잘 만든 게임.</h4>
+
+<p>관련 프로젝트로는 <a href="https://hackernoon.com/league-of-legends-predicting-wins-in-champion-select-with-machine-learning-6496523a7ea7">Jihan Yin 의 League of Legends: Predicting Wins In Champion Select With Machine Learning</a>가 있습니다.
+위 프로젝트에서는 조합에 관련된 플레이어 데이터에 따른 <code>승률</code>을 예측하였습니다.
+해당 챔피언의 승률과 플레이 횟수와 지난 경기들의 기록과 레벨, 룬 등 여러가지 데이터를 짬뽕하여 <code>60%</code>의 결과를 얻었다고 합니다.
+그리고 결론으로 다음과 같이 말합니다.</p>
+
+<blockquote>
+<p>This shows that games aren’t decided in champion select, as a good deal of randomness happens during the match. However, there may be cases where my model predicts a very high percentage(&gt;90) of a loss, and dodging those games may be wise.</p>
+
+<p>게임은 챔피언 선택에 의해 좌지우지 되지 않습니다. 왜냐하면 게임 내에서 많은 변수들이 있기 때문입니다. 하지만 이 프로젝트가 90% 이상으로 게임이 질거라고 예측한다면 아마 닷지하는게 좋은 선택일 겁니다. ㅋ</p>
+</blockquote>
+
+<p>저도 Jihan Yin 의 결론에 동의합니다. 롤은 잘 만든 게임인 것이 증명되었습니다.
+딥롤의 챔피언 추천도의 성공률은 20%입니다.
+그만큼 특정 챔피언이나 특정 조합이 승리에 큰 영향을 미치지 못한다는 것입니다.
+<em>절대 20%밖에 영향을 미치지 못한다는 뜻이 아닙니다. 이것은 한번 꼬인 문제입니다. 추천 정확도가 20%라는 것입니다. 즉 마스터키는 없다는 것입니다.</em></p>
+
+<p>한편으로 Jihan Yin 의 프로젝트와 딥롤 프로젝트의 차이점은 기존의 Machine Learning 과 Deep learning 에 차이인데,
+챔피언 추천을 만들기 전에 챔피언 조합에 따른 승률을 예측했었는데 조금의 overfitting 이 있긴 했지만
+14 만개의 train data set 에서 <code>96%</code>의 정확도와 3 만개 validation data set 에서 <code>88%</code>를 기록하기도 했습니다.</p>
+
+<p>이 부분에 대해서는 더 연구가 필요해 보였습니다.</p>
+
+<h4 id="챔피언-조합을-학습해내다">챔피언 조합을 학습해내다</h4>
+
+<p><img src="https://i.imgur.com/IlytiKp.png" alt="" /></p>
+
+<p>가장 신기했던 부분은 야스오에게 <code>말파이트</code>와 <code>자크</code>와 <code>알리스타</code>를 추천해주는 것이었습니다.
+<em>이즈리얼은 왜 추천해주는지 모르겠지만 원딜에서 이즈리얼이 가장 좋기 때문인것 같습니다</em></p>
+
+<!-- cnn 도 시도했음 -->
+
+<!-- web spa 이야기 -->
+
+<blockquote>
+<p>아직 작성중인 글 입니다.</p>
+</blockquote>
  <div id="disqus_thread"></div>
 <script>
     var disqus_config = function () {
