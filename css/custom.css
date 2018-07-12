@@ -18,3 +18,22 @@ div.content-wrapper img {
 .content-column-content p {
     color: #333333;
 }
+
+/* for about portfolio page */
+.about tr:nth-child(even) {
+    background-color: rgb(245, 245, 245);
+}
+.about td {
+    padding: 6px 20px;
+}
+.about td:nth-child(1) {
+    border-right: 1px dashed rgb(220, 220, 220);
+    /* padding: 6px 20px; */
+    color: rgb(135, 135, 135);
+    font-weight: lighter;
+    font-size: 14px;
+}
+.about td:nth-child(2) {
+    border-right: 1px dashed rgb(220, 220, 220);
+    text-align: center;
+}
