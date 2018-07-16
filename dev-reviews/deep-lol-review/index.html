@@ -111,13 +111,13 @@ ga('send', 'pageview');
 </div>
 
     <div class="row">
-        <div class="col-lg-10 content-wrapper">
+        <div class="col-lg-8 content-wrapper">
             <div class="content-column-content">
                 <h1>Deep LoL 개발기</h1>
                 
 
 <blockquote>
-<p>아직 작성중인 글 입니다.</p>
+<p>연구가 진행됨에 따라 지속적으로 업데이트될 글입니다.</p>
 </blockquote>
 
 <p>국내 최고의 인기 게임 <code>League Of Legends</code> 에 인류 최고의 기술 <code>Deep Learning</code>을 접목시켜 보았습니다.</p>
@@ -133,8 +133,8 @@ ga('send', 'pageview');
 
 <p><img src="http://preview.yes24.com/PreviewResize.aspx?no=17967245&amp;fn=n8apwkbkdvyfhy5y01.jpg&amp;size=700|952" alt="" /></p>
 
-<p>6 개월 계획을 세우고 기초부터 공부했습니다. 부족한 수학을 위해 <code>Linear Algebra</code> 가 많은 도움 되었습니다.
-<code>Deep Learning</code> 을 위해 아래의 <em>매우 유익하고 소중한</em> 강의들을 들었습니다. <em>모두 무료입니다.</em>
+<p>개인적으로 부족한 수학을 위해 노력을 했는데 <code>Coding The Matrix</code> 가 많은 도움 되었습니다.
+또한 <code>Deep Learning</code> 을 위해 아래의 <em>매우 유익하고 소중한</em> 강의들을 들었습니다. <em>모두 무료입니다.</em>
 수학도, 딥러닝도 죄다 영어로 공부하다보니 자연스레 영어 실력이 늘어 토익 점수가 꽤 오르기도 했습니다.</p>
 
 <ul>
@@ -147,48 +147,56 @@ ga('send', 'pageview');
 
 <p><img src="https://tensorflowkorea.files.wordpress.com/2017/08/cs231n_2017.png?w=625" alt="" /></p>
 
-<blockquote>
-<p>CS231n 의 <code>Fei-Fei Li</code> 교수님이신데 준수하신 외모에 깜짝 놀랬었습니다.</p>
-</blockquote>
+<p><em>CS231n 의 <code>Fei-Fei Li</code> 교수님이신데 외모가 준수하심 ㅎ;</em></p>
 
-<h4 id="data-수집-crawler">Data 수집, Crawler</h4>
+<h4 id="data-수집-crawler">Data 수집 Crawler</h4>
 
 <p><img src="https://i.imgur.com/jEmRRIE.png" alt="" /></p>
 
-<p>train 을 위해 data set 을 모아야 했습니다. <a href="https://developer.riotgames.com/"><code>Riot Games API</code></a> 를 활용하여 cralwer 를 만들었습니다.
-graph 를 보며 필요한 만큼 각 queue 의 consumer thread 를 조정합니다. <em>언젠가 이 crawler 만 따로 프로젝트로 빼내야겠습니다.</em></p>
+<p>train 을 위해 data set 을 모아야 했습니다. crawler 로 자동화를 꾀했습니다.
+<a href="https://developer.riotgames.com/"><code>Riot Games API</code></a> 를 활용했습니다.
+<code>node</code>기반으로 <code>terminal graphic</code>으로 dashboard 를 구현하였는데 매우 편리했습니다.
+graph 를 보며 필요한 만큼 각 queue 의 consumer thread 를 조정합니다.
+queue 로 관리되기 때문에 flow 제어에 탁월하며 thread 수를 조정하여 속도는 매우 빠릅니다.
+<em>언젠가 이 crawler 만 따로 프로젝트로 빼내야겠습니다.</em></p>
 
 <h4 id="최악의-mongodb">최악의 MongoDB</h4>
 
-<p><img src="/img/deep-lol/db-comparison-write.png" alt="" />
-<img src="/img/deep-lol/db-comparison-read.png" alt="" />
-<img src="/img/deep-lol/db-comparison-update.png" alt="" />
-<img src="https://i.imgur.com/O9rNlnZ.png" alt="" /></p>
+<!-- ![](/img/deep-lol/db-comparison-write.png)
+![](/img/deep-lol/db-comparison-read.png)
+![](/img/deep-lol/db-comparison-update.png) -->
 
-<p>처음엔 database 로 <code>MongoDB</code> 를 썼습니다.
-하지만 준수한 write 속도에 비해 <code>현저히 느린 read 속도</code> 이슈가 치명적이었습니다.
-data attribute 가 워낙에 또 많아서 그렇기도 했지만 한 fetch 에 1000ms 가 걸리기도 했습니다.</p>
+<p><img src="https://i.imgur.com/O9rNlnZ.png" alt="" /></p>
+
+<p>처음엔 <code>MongoDB</code> 를 썼는데 준수한 write 속도에 비해 <code>현저히 느린 read 속도</code> 이슈가 치명적이었습니다.
+data attribute 가 70 개 정도에 중첩된 것들이 좀 있어서 db 입장에서는 난처하기도 했을겁니다.
+skip 으로 10 만번째 document 를 select 하면 1000ms 이상이 나오는 상황이었습니다.
+<em>더 뒤로 가니 fetch 에 10 초 까지&hellip;</em></p>
 
 <p><img src="https://i.imgur.com/UA5z1jD.png" alt="" /></p>
 
 <p>뿐만 아니라 <code>python</code> 과의 조합은 최악이었습니다.
-<code>mongodb driver</code>를 통해 fetch 된 data 들은 mongo driver 자체를 위해 <code>wrapping</code>된 <code>무엇</code>인가가 있어서
+mongodb driver 를 통해 fetch 된 data 들은 mongo driver 자체를 위해 <code>wrapping 된 무엇</code>인가가 있어서
 실제 데이터보다 최대 <code>10배</code> 가량 무거웠습니다.
 그래서 <code>25만개</code> 데이터가 무려 <code>11GB</code>를 차지했습니다.
 <em>read 도 느린데 심지어 무겁기까지? 이거 정말 최악</em></p>
 
-<h4 id="rdbms-mysql-아직-죽지않았다">RDBMS - MySQL &ldquo;아직 죽지않았다&rdquo;</h4>
+<h4 id="rdbms-mysql-select-자신있다">RDBMS - MySQL &ldquo;select, 자신있다!&rdquo;</h4>
 
 <p><img src="https://i.imgur.com/yTeI9fk.png" alt="" /></p>
 
-<p><code>workbench</code>는 꿈에 그리던 DB GUI Management 를 제공해줍니다.
-꽤 쓰기 편했으며 무엇보다 <code>monitoring</code>이 환상적이었습니다.
-write 가 상상을 초월할 정도로 빨랐습니다. 거의 <code>초당 10만개, 그 이상?</code>
+<p>이러한 이유로 mysql 로 옮기게 되었는데 생각보다 환경이 편했습니다.
+<code>workbench</code>는 꿈에 그리던 DB GUI Management 를 제공해줍니다.
+여러가지 기능들이 있었는데 무엇보다 <code>monitoring</code>이 환상적이었습니다.
+확실히 mongo db 보다는 read 가 매우 빨랐습니다.
+100 만번째 record fetch 에도 1000ms 안팎이었으니 말이죠.
+또 예상외로 write 가 상상을 초월할 정도로 빨랐습니다. 거의 <code>초당 10만개, 그 이상?</code>
 이유는 <code>primary key</code>를 <code>auto_increment</code>로 했기 때문입니다.
 insert 하는데에 있어서 순차적으로 file node 를 접근해서 write 하기 때문에 내부적으로 굉장한 최적화를 시켰으리라 짐작됩니다.
-<code>primary key</code>를 다른 값으로 해보면 중복 검사하랴, <code>indexing</code> 하랴 꽤 느려집니다.</p>
+<code>primary key</code>를 다른 값으로 해보면 중복 검사하랴, <code>indexing</code> 하랴 꽤 느려집니다.
+<em>140 만개 insert 하는데 5 초 이내였습니다. 정말 굉장했습니다.</em></p>
 
-<h4 id="딥러닝-학습-keras">딥러닝 학습, Keras</h4>
+<h4 id="딥러닝-학습-keras">딥러닝 학습 - Keras</h4>
 
 <p><img src="https://s3.amazonaws.com/keras.io/img/keras-logo-2018-large-1200.png" alt="" /></p>
 
@@ -229,10 +237,31 @@ insert 하는데에 있어서 순차적으로 file node 를 접근해서 write �
 <p>사진을 미쳐 준비하지 못했는데, 거짓말 하는건 아니고 embedding 은 굉장히 점수가 낮았습니다.
 이유는 neural 들만 알겠지만.. 추측하기론 embedding 으로 임의의 vector 로 챔피언들을 나타낼때
 <code>output</code>에 의거하여 각 챔피언의 vector 를 이렇게 저렇게 다른 각도로 neural 들이 공부하는데
-생각보다 그 vector 값들이 도움이 안되는 것 같습니다. <em>=현실과 너무 동떨어진 vector 값이고 사실상 onehot encoding 같은 binary 의 의미가 너무 강하기 때문</em></p>
+생각보다 그 vector 값들이 neural 의 학습에 도움이 안되는 것 같습니다.</p>
 
-<p>vector 들이 나타내는 값을 사용하기보단 차라리 챔피언의 체력이나 공격력 등을 feature 로 넣어보는게 어떨까 생각했습니다.
-하지만 <a href="#League of Legends 는 잘 만든 게임.">결과</a>를 분석해보니 애초에 챔피언은 승리에 큰 영향을 미치지 않았습니다.</p>
+<p><img src="https://i.imgur.com/KNMTyBO.png" alt="" /></p>
+
+<p>더 풀어 설명드리겠습니다.
+챔피언은 체력, 마나, 공격력과 방어력 등 고유한 능력치를 가지고 있습니다.
+이 능력치를 feature 로 삼아서 학습을 시킬 수 있습니다.
+이러한 방식이 바로 embedding 이라고 할 수 있습니다.
+embedding 의 장점은 <code>clustering</code> 에 능하다는 것입니다.
+체력이 높으면서 방어력이 강한 람머스나 말파이트 등은 vector 세계에서 서로 비슷한 위치에 있을 것 입니다.
+그리고 공격력이 높은 케이틀린은 쩌 멀리 혼자 외딴 곳에 있겠지요.</p>
+
+<p><img src="https://www.tensorflow.org/versions/r0.11/images/linear-relationships.png" alt="" />
+이 개념은 인공지능 분야의 자연어 처리에서 핵심 기술로 자리잡고 있습니다.
+바로 <code>word2vec</code> 입니다.
+단어의 뜻이 아닌 <code>관계</code>를 이해시키는 approach 로서 굉장히 효율적입니다.</p>
+
+<p>그런데 이 embedding 방식이 효율적이지 못한 것은 왜일까요.
+추측컨대 챔피언들은 절대적인 관계가 별로 없기 때문이라고 생각합니다.
+즉, 체력이 높으면 체력 낮은 챔피언에게 승률이 높다 이런 것은 없다는 것입니다.
+사실상 챔피언이 1:1 이라면 있을 법도한데 팀게임이다보니 그런 것 같습니다.</p>
+
+<p>따라서 onehot encoding 처럼 챔피언 하나 하나를 있는 그대로의 <code>스위치</code> 하나로 보는 것이
+이 문제에 접근하는데에 있어 더 적절한 approach 였습니다.
+그리고 결과도 더 좋게 나오기도 했습니다.</p>
 
 <h4 id="onehot-으로-여러가지-시도">onehot 으로 여러가지 시도</h4>
 
@@ -254,20 +283,34 @@ insert 하는데에 있어서 순차적으로 file node 를 접근해서 write �
 </ul></li>
 </ul>
 
-<p>수치적으로서는(evaluation score) 전자가 더 나았습니다.
-아무래도 overfitting 하기도 쉽고 관여되는 feature input 자체가 낮기 때문이라고 생각합니다.
+<p>수치적 결과로서는(evaluation score) 전자가 더 나았습니다.
+아무래도 overfitting 하기도 쉽고 관여되는 feature input 갯수가 낮기 때문이라고 생각합니다.
+전자의 경우에는 140 개의 neuron 이지만 후자의 경우에는 560 개의 neuron 이기 때문입니다.
 그러나 실제 플레이어로서 느끼기엔 후자가 더 좋았습니다.
 이유는 각 lane 단위로 추천해주기 때문이었던 것 같습니다.</p>
 
 <h4 id="cnn-빼놓으면-섭섭하지">CNN 빼놓으면 섭섭하지</h4>
 
 <p>제 시발점이자 동기였던 AlphaGo 는 CNN 으로 다음 수를 어디에 놓을지 확률적으로 계산해 낸다고 하죠.
-그래서 저도 CNN 을 <em>우겨넣어보았습니다.</em></p>
+그래서 저도 CNN 을 <em>우겨넣어보았습니다.</em>
+2 가지 input 으로 시도해보았습니다.</p>
 
-<ul>
-<li>Conv1D</li>
-<li>Conv2D</li>
-</ul>
+<p><img src="https://i.imgur.com/4A6obBP.png" alt="" /></p>
+
+<p>우선 <code>Conv1D</code> 입니다. 1-dimension array 에 filter 를 적용시킬 수 있습니다.
+onehot 으로 인코딩한 뒤 합성곱 시키고 <code>Flatten</code> 하고 등등 하였습니다.
+결과는 좋지 못했습니다. 추천 정확도는 20%도 나오지 못했습니다.
+embedding 으로 인코딩 하여 합성곱 했던 결과는 onehot 보다 나았지만 ± 5% 일 뿐이었습니다.</p>
+
+<p><img src="https://i.imgur.com/GfvpQpI.png" alt="" />
+<em>embedding 을 예시로 하기에는 너무 귀찮아서 대충 했습니다 ㅋㅋ</em></p>
+
+<p>이후엔 <code>Conv2D</code>를 하였는데 각 줄은 140x4 였습니다.
+즉 4 개의 팀원 챔피언들의 140 개의 챔피언 feature,
+onehot 에서는 binary data 이고 embedding 에서는 represent numeric value 입니다.
+결과는 <code>Conv1D</code> 보다 미세하게 낮았습니다.
+row 간의 data 연관성이 없다는 반증으로서 row 간 data 가 서로 섞일 시
+너무 쓸데없는 쓰레기 값으로 탄생된다는 것을 말해주는 결과라 생각합니다.</p>
 
 <h4 id="league-of-legends-는-잘-만든-게임">League of Legends 는 잘 만든 게임.</h4>
 
@@ -283,26 +326,31 @@ insert 하는데에 있어서 순차적으로 file node 를 접근해서 write �
 </blockquote>
 
 <p>저도 Jihan Yin 의 결론에 동의합니다. 롤은 잘 만든 게임인 것이 증명되었습니다.
-딥롤의 챔피언 추천도의 성공률은 20%입니다.
+딥롤의 챔피언 추천도의 성공률은 30%입니다.
 그만큼 특정 챔피언이나 특정 조합이 승리에 큰 영향을 미치지 못한다는 것입니다.
-<em>절대 20%밖에 영향을 미치지 못한다는 뜻이 아닙니다. 이것은 한번 꼬인 문제입니다. 추천 정확도가 20%라는 것입니다. 즉 마스터키는 없다는 것입니다.</em></p>
+<em>절대 30%밖에 영향을 미치지 못한다는 뜻이 아닙니다. 이것은 한번 꼬인 문제입니다. 추천 정확도가 20%라는 것입니다. 즉 마스터키는 없다는 것입니다.</em></p>
 
-<p>한편으로 Jihan Yin 의 프로젝트와 딥롤 프로젝트의 차이점은 기존의 Machine Learning 과 Deep learning 에 차이인데,
+<p>한편으로 Jihan Yin 의 프로젝트와 딥롤 프로젝트의 차이점은
+기존의 Machine Learning 과 Deep learning 의 차이인데,
 챔피언 추천을 만들기 전에 챔피언 조합에 따른 승률을 예측했었는데 조금의 overfitting 이 있긴 했지만
 14 만개의 train data set 에서 <code>96%</code>의 정확도와 3 만개 validation data set 에서 <code>88%</code>를 기록하기도 했습니다.</p>
 
-<p>이 부분에 대해서는 더 연구가 필요해 보였습니다.</p>
+<p>이 부분에 대해서는 더 연구가 필요해 보였습니다.
+<em>사실 이미 많이 알고있는 사실이지만 머신러닝보다 딥러닝이 전반적으로 문제 해결 능력이 뛰어나다는 것</em></p>
 
 <h4 id="챔피언-조합을-학습해내다">챔피언 조합을 학습해내다</h4>
 
 <p><img src="https://i.imgur.com/IlytiKp.png" alt="" /></p>
 
-<p>가장 신기했던 부분은 야스오에게 <code>말파이트</code>와 <code>자크</code>와 <code>알리스타</code>를 추천해주는 것이었습니다.
+<p>썩 좋지 못한 결과 속에서도 희망의 실마리를 하나 발견해낼 수 있었습니다.
+바로 야스오에게 <code>말파이트</code>와 <code>자크</code>와 <code>알리스타</code>를 추천해주는 것이었습니다.
 <em>이즈리얼은 왜 추천해주는지 모르겠지만 원딜에서 이즈리얼이 가장 좋기 때문인것 같습니다</em></p>
 
-<!-- cnn 도 시도했음 -->
+<p>따라서 조금 더 연구를 진행해볼 계획입니다. 또한 <code>Genetic Algorithm</code>도 도입해볼 생각입니다.</p>
 
-<!-- web spa 이야기 -->
+<blockquote>
+<p>연구가 진행됨에 따라 지속적으로 업데이트될 글입니다.</p>
+</blockquote>
  <div id="disqus_thread"></div>
 <script>
     var disqus_config = function () {
