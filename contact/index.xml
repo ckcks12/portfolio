@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Get in touch on ckcks12 projects</title>
-    <link>https://ckcks12.com/portfolio/contact/</link>
+    <link>https://ckcks12.com/contact/</link>
     <description>Recent content in Get in touch on ckcks12 projects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>&amp;copy;2018 ckcks12</copyright>
     <lastBuildDate>Fri, 06 Jul 2018 10:55:25 +0900</lastBuildDate>
     
-	<atom:link href="https://ckcks12.com/portfolio/contact/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ckcks12.com/contact/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

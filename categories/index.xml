@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on ckcks12 projects</title>
-    <link>https://ckcks12.com/portfolio/categories/</link>
+    <link>https://ckcks12.com/categories/</link>
     <description>Recent content in Categories on ckcks12 projects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>&amp;copy;2018 ckcks12</copyright>
     
-	<atom:link href="https://ckcks12.com/portfolio/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ckcks12.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
