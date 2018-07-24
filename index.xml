@@ -1,26 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ckcks12</title>
+    <title>ckcks12 projects</title>
     <link>https://ckcks12.com/</link>
-    <description>Recent content on ckcks12</description>
+    <description>Recent content on ckcks12 projects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>&amp;copy;2018 ckcks12</copyright>
-    <lastBuildDate>Sat, 07 Jul 2018 08:52:17 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 07 Jul 2018 07:52:23 +0900</lastBuildDate>
     
 	<atom:link href="https://ckcks12.com/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Deep LoL</title>
-      <link>https://ckcks12.com/projects/deep-lol/</link>
-      <pubDate>Sat, 07 Jul 2018 08:52:17 +0900</pubDate>
-      
-      <guid>https://ckcks12.com/projects/deep-lol/</guid>
-      <description>딥러닝 기술을 활용해 챔피언을 추천해줍니다.
-deep.thresh.io 에서 만나볼 수 있습니다.</description>
-    </item>
     
     <item>
       <title>Deep LoL 개발기</title>
