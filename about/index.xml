@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>About me on ckcks12 projects</title>
-    <link>https://ckcks12.com/about/</link>
+    <link>https://ckcks12.com/portfolio/about/</link>
     <description>Recent content in About me on ckcks12 projects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>&amp;copy;2018 ckcks12</copyright>
     <lastBuildDate>Fri, 06 Jul 2018 10:55:25 +0900</lastBuildDate>
     
-	<atom:link href="https://ckcks12.com/about/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ckcks12.com/portfolio/about/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
