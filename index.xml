@@ -18,8 +18,8 @@
       <pubDate>Sat, 07 Jul 2018 08:52:17 +0900</pubDate>
       
       <guid>https://ckcks12.com/projects/deep-lol/</guid>
-      <description>딥러닝 기술을 활용해 챔피언을 추천해줍니다.
-deep.thresh.io 에서 만나볼 수 있습니다.</description>
+      <description>  Deep LoL What does it do? 롤 경기를 학습하여 챔피언의 조합을 추천하고 승률을 예측하는 웹 서비스
+Tech Stack  Deep Learning(Keras) Web(Bulma/Vue/Node) CUI Crawler(Node) Database(MySQL)  References  DeepLoL  </description>
     </item>
     
     <item>
@@ -28,7 +28,9 @@ deep.thresh.io 에서 만나볼 수 있습니다.</description>
       <pubDate>Fri, 06 Jul 2018 22:49:43 +0900</pubDate>
       
       <guid>https://ckcks12.com/projects/debian-package-manager/</guid>
-      <description></description>
+      <description>  Debian Package Manager What does it do? apt를 사용할 수 없는 환경에서 필요한 패키지를 의존성까지 함께 다운로드 해주는 프로그램
+Tech Stack Python
+References  Github  </description>
     </item>
     
     <item>
@@ -37,7 +39,8 @@ deep.thresh.io 에서 만나볼 수 있습니다.</description>
       <pubDate>Fri, 06 Jul 2018 22:49:38 +0900</pubDate>
       
       <guid>https://ckcks12.com/projects/x-twitter/</guid>
-      <description></description>
+      <description>  X-Twitter What does it do? 사용자의 관심사를 파악하여 좋아할 만한 트윗과 트위터리안을 기존 트위터 웹사이트의 디자인에 자연스레 추가해서 보여주는 크롬 확장 프로그램
+Tech Stack  Network Mining(C#/Weka) Chrome Extension MSSQL  References  Github Team 맞춤형 트윗 추천 시스템 구축을 위한 트위터 데이터 수집 조휘연, 김혜진, 이은찬, 이민정, 남용욱, 김용혁 한국멀티미디어학회 춘계학술발표대회 논문집 제 20 권 1 호 (2017) pp 254-255  </description>
     </item>
     
     <item>
@@ -55,7 +58,8 @@ deep.thresh.io 에서 만나볼 수 있습니다.</description>
       <pubDate>Fri, 06 Jul 2018 22:49:28 +0900</pubDate>
       
       <guid>https://ckcks12.com/projects/lantern/</guid>
-      <description></description>
+      <description>   Lantern What does it do? 안드로이드 어플리케이션의 에러 원인과 성능상의 병목 지점 파악을 위해 여러 계층에 대한 성능 측정 노하우를 보기 쉽게 알려주는 설치형 웹 서비스 시스템
+Tech Stack  Web(d3/scss/vue/webpack/gulp/node/nginx) MySQL Android Unity Profiling  References  Github Youtube  </description>
     </item>
     
     <item>
@@ -64,7 +68,9 @@ deep.thresh.io 에서 만나볼 수 있습니다.</description>
       <pubDate>Fri, 06 Jul 2018 22:49:23 +0900</pubDate>
       
       <guid>https://ckcks12.com/projects/cookie/</guid>
-      <description></description>
+      <description>  Cookie What does it do? 매일 반복되는 일상에 지친 사람들에게 힘이 되는 말말말을 전달해주는 앱 서비스
+Tech Stack Android/Amazon S3/Kotlin
+References  Landing Page Github  </description>
     </item>
     
     <item>
@@ -73,7 +79,8 @@ deep.thresh.io 에서 만나볼 수 있습니다.</description>
       <pubDate>Fri, 06 Jul 2018 22:49:18 +0900</pubDate>
       
       <guid>https://ckcks12.com/projects/sayahae/</guid>
-      <description></description>
+      <description>  Sayahae What does it do? 쇼핑 사이트의 댓글을 분석하여 요약한 뒤 사용자에게 도움되는 지표로 상품을 큐레이션 해주는 웹 서비스
+Tech Stack  NLP(Python) Web(Angular/Node) MongoDB Elastic Search/Kibana/Logstash Crawler(Python/Telegram Bot)  References  Slideshare  </description>
     </item>
     
     <item>
@@ -82,7 +89,9 @@ deep.thresh.io 에서 만나볼 수 있습니다.</description>
       <pubDate>Fri, 06 Jul 2018 22:49:12 +0900</pubDate>
       
       <guid>https://ckcks12.com/projects/ubot/</guid>
-      <description></description>
+      <description>  UBot What does it do? 광운대학교 공지사항/강의게시판 등 학교 생활 관련된 정보가 등록될 시 카카오톡으로 알림과 함께 해당 글의 스크린샷과 첨부파일도 제공해주는 서비스
+Tech Stack Python/Test(PyTest)/MongoDB/Selenium/Automation
+References </description>
     </item>
     
     <item>
@@ -91,7 +100,9 @@ deep.thresh.io 에서 만나볼 수 있습니다.</description>
       <pubDate>Fri, 06 Jul 2018 22:49:06 +0900</pubDate>
       
       <guid>https://ckcks12.com/projects/safe-desk/</guid>
-      <description></description>
+      <description>   Safe Desk What does it do? 저성능의 웹캠 하나만으로도 사람의 머리와 팔을 인식하여 위험한 순간임을 알아차리는 알고리즘입니다.
+Tech Stack C++/OpenCV
+References  Github Youtube Slide Share  </description>
     </item>
     
     <item>
@@ -100,7 +111,9 @@ deep.thresh.io 에서 만나볼 수 있습니다.</description>
       <pubDate>Fri, 06 Jul 2018 22:49:01 +0900</pubDate>
       
       <guid>https://ckcks12.com/projects/skimmer/</guid>
-      <description></description>
+      <description>   Skimmer What does it do? 검색 사이트의 검색 결과로 나온 각 사이트들의 내용을 실시간으로 분석하여 자동으로 태그를 생성해 요약 정보를 보여주는 크롬 확장 프로그램
+Tech Stack NLP/PHP/Chrome Extension
+References  Youtube Github  </description>
     </item>
     
     <item>
@@ -109,7 +122,9 @@ deep.thresh.io 에서 만나볼 수 있습니다.</description>
       <pubDate>Fri, 06 Jul 2018 22:48:53 +0900</pubDate>
       
       <guid>https://ckcks12.com/projects/nolo/</guid>
-      <description></description>
+      <description>  Nolo What does it do? 공공 장소 API를 활용하여 현재 위치/지하철 역 기반 놀만한 장소를 추천해주는 웹 서비스
+Tech Stack Semantic UI/Backbone/Static Web
+References  Nolo Github  </description>
     </item>
     
     <item>
@@ -118,7 +133,8 @@ deep.thresh.io 에서 만나볼 수 있습니다.</description>
       <pubDate>Fri, 06 Jul 2018 22:48:48 +0900</pubDate>
       
       <guid>https://ckcks12.com/projects/ground-monitoring/</guid>
-      <description></description>
+      <description>  Ground Monitoring What does it do? Tech Stack Visual Basic
+References </description>
     </item>
     
     <item>
@@ -127,7 +143,8 @@ deep.thresh.io 에서 만나볼 수 있습니다.</description>
       <pubDate>Fri, 06 Jul 2018 22:48:41 +0900</pubDate>
       
       <guid>https://ckcks12.com/projects/dp-meter/</guid>
-      <description></description>
+      <description>  DP Meter What does it do? Tech Stack Visual Basic
+References </description>
     </item>
     
     <item>
@@ -136,7 +153,9 @@ deep.thresh.io 에서 만나볼 수 있습니다.</description>
       <pubDate>Fri, 06 Jul 2018 22:47:52 +0900</pubDate>
       
       <guid>https://ckcks12.com/projects/easy-programming/</guid>
-      <description></description>
+      <description>   Easy Programming What does it do? Docker 기반의 온라인 컴파일러로써 프로그래밍 입문자들이 복잡한 서버 세팅이나 라이브러리 세팅을 거치지 않고 배움에 몰두할 수 있도록 서비스를 제공합니다. 또한 Markdown을 교과서 형식으로 채택해 5:5 레이아웃으로 한쪽에는 교과서를 보며 한쪽에서는 코딩을 할 수 있는 획기적인 디자인을 개발하였습니다.
+Tech Stack Docker/PHP/Nginx
+References  (partial) Github Youtube  </description>
     </item>
     
     <item>
@@ -145,7 +164,9 @@ deep.thresh.io 에서 만나볼 수 있습니다.</description>
       <pubDate>Fri, 06 Jul 2018 22:46:55 +0900</pubDate>
       
       <guid>https://ckcks12.com/projects/noti-q/</guid>
-      <description></description>
+      <description>  Noti.Q What does it do? 가게 재고 회귀 예측 웹 서비스
+Tech Stack php
+References </description>
     </item>
     
     <item>
@@ -154,7 +175,9 @@ deep.thresh.io 에서 만나볼 수 있습니다.</description>
       <pubDate>Fri, 06 Jul 2018 22:43:44 +0900</pubDate>
       
       <guid>https://ckcks12.com/projects/project7302/</guid>
-      <description></description>
+      <description>  Project7302 What does it do? 윈도우즈를 사용함에 있어 도움되는 여러가지 기능을 모아두었고 자체 제작한 OCR로 매크로 기능을 제공하는 프로그램
+Tech Stack Visual Basic/OCR/Windows API
+References  Github  </description>
     </item>
     
     <item>
@@ -163,7 +186,9 @@ deep.thresh.io 에서 만나볼 수 있습니다.</description>
       <pubDate>Fri, 06 Jul 2018 22:06:49 +0900</pubDate>
       
       <guid>https://ckcks12.com/projects/play-with-your-algorithm/</guid>
-      <description></description>
+      <description>  Play With Your Algorithm What does it do? 알고리즘 순서도를 그리고, 실행시키고 컴파일 해보며 공부할 수 있습니다. 단게별 인터프리팅이 가능하기 때문에 추적에 용이합니다.
+Tech Stack Visual Basic
+References  Github  </description>
     </item>
     
   </channel>

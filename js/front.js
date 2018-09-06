@@ -182,3 +182,15 @@ $(function() {
         window.viewer.hide()
     })
 })
+
+/**
+ * Owl Carousel
+ */
+$(document).ready(function() {
+    $('.owl-carousel').owlCarousel({
+        autoWidth: true,
+        nav: true,
+        items: 1,
+        video: true
+    });
+});
