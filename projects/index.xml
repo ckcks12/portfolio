@@ -6,7 +6,6 @@
     <description>Recent content in Projects on ckcks12 projects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <copyright>&amp;copy;2018 ckcks12</copyright>
     <lastBuildDate>Sat, 07 Jul 2018 08:52:17 +0900</lastBuildDate>
     
 	<atom:link href="https://ckcks12.com/projects/index.xml" rel="self" type="application/rss+xml" />
@@ -49,7 +48,9 @@ Tech Stack  Network Mining(C#/Weka) Chrome Extension MSSQL  References  Github T
       <pubDate>Fri, 06 Jul 2018 22:49:33 +0900</pubDate>
       
       <guid>https://ckcks12.com/projects/w-tube/</guid>
-      <description></description>
+      <description>  W-Tube What does it do? 유투브의 인기 있는 영상들을 자동으로 짜집기해 새로 업로드 하는 프로그램
+Tech Stack Electron/Node/ffmpeg/Bootstrap
+References </description>
     </item>
     
     <item>

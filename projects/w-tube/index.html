@@ -27,12 +27,16 @@
 <link href="https://ckcks12.com/css/custom.css" rel="stylesheet">
 <link href="https://ckcks12.com/css/imagesviewer.css" rel="stylesheet">
 <link rel="shortcut icon" href="https://ckcks12.com/img/favicon.png">  
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-74316508-2', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-74316508-2', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 </head>
 <body>
   <div id="all">
@@ -50,6 +54,8 @@ ga('send', 'pageview');
       
       
         <li><a href="https://ckcks12.com/projects/">Projects</a></li>
+      
+        <li><a href="https://ckcks12.com/dev-reviews/">Dev Reviews</a></li>
       
         <li><a href="https://ckcks12.com/about/">About</a></li>
       
@@ -112,9 +118,25 @@ ga('send', 'pageview');
         <div class="col-lg-8 content-wrapper">
             <div class="content-column-content">
                 <h1>W Tube</h1>
-                <p><img src="/img/w-tube/w-tube.png" alt="" /></p>
+                
+
+<div class="owl-carousel owl-theme">
+    <img src="/img/w-tube/w-tube.png">
+</div>
+
+<h1 id="w-tube">W-Tube</h1>
+
+<h4 id="what-does-it-do">What does it do?</h4>
+
+<p>유투브의 인기 있는 영상들을 자동으로 짜집기해 새로 업로드 하는 프로그램</p>
+
+<h4 id="tech-stack">Tech Stack</h4>
+
+<p><code>Electron</code>/<code>Node</code>/<code>ffmpeg</code>/<code>Bootstrap</code></p>
+
+<h4 id="references">References</h4>
  <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
